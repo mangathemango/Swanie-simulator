@@ -15,31 +15,37 @@ class SwanieMovement : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collision)
     {   
-
+        running = true;
         jumping = false;
-        bodyAnimator.SetBool("Jumping", false);
-        legAnimator.SetBool("Jumping", false);
-        bodyAnimator.SetBool("Running", true);
-        legAnimator.SetBool("Running", true);
+        setAnimation();
         
     }
     
     private void Start()
     {
+        jumping = false;
         running = true;
-        bodyAnimator.SetBool("Running", true);
-        legAnimator.SetBool("Running", true);   
-        bodyAnimator.SetBool("Jumping", false);
-        legAnimator.SetBool( "Jumping", false); 
+        setAnimation();
     }
 
     public void Jump() {
         Debug.Log("Jumping");
         jumping = true;
-        bodyAnimator.SetBool("Jumping", true);
-        legAnimator.SetBool("Jumping", true);
-        bodyAnimator.SetBool("Running", false);
-        legAnimator.SetBool("Running", false);
+        setAnimation();
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+    }
+
+    private void setAnimation() {
+        if (jumping) {
+            bodyAnimator.SetBool("Jumping", true);
+            legAnimator.SetBool("Jumping", true);
+            bodyAnimator.SetBool("Running", false);
+            legAnimator.SetBool("Running", false);
+        } else {
+            bodyAnimator.SetBool("Jumping", false);
+            legAnimator.SetBool("Jumping", false);
+            bodyAnimator.SetBool("Running", true);
+            legAnimator.SetBool("Running", true);
+        }
     }
 }
