@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: d1802dd5dd8af4b4ca88985f0822de4b
+guid: 9cfa9aa044344ae4680d84fab5b95788
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3337038689812066966
-    second: pixil-frame-0_0
+      213: -1981418222017897944
+    second: jumping_0
+  - first:
+      213: -7642617639853138913
+    second: jumping_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +103,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pixil-frame-0_0
+      name: jumping_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1590
-        height: 1590
-      alignment: 9
-      pivot: {x: 0.5207115, y: 0.2668128}
+        width: 1600
+        height: 1600
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a6d4404fdf470b1d0800000000000000
-      internalID: -3337038689812066966
+      spriteID: 82a132500a69084e0800000000000000
+      internalID: -1981418222017897944
       vertices: []
       indices: 
       edges: []
@@ -125,7 +128,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e54c04f350e7b4d419bbb974f8c0a8ab
+    spriteID: c16b752529ef80b4cad6d3150bf08a27
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +138,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pixil-frame-0_0: -3337038689812066966
+      jumping_0: -1981418222017897944
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
