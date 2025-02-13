@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5465fd2a8a129f46aee7e6dd36f8a66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 2
   swanieTransform: {fileID: 0}
   _floatRange: 1
 --- !u!1 &6650826526743487894

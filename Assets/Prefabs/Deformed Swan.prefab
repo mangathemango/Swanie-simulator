@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1248114ef12b05840ac84c247b78305e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 6
   swanieTransform: {fileID: 0}
   jumpForce: 20
   jumpDistance: -1

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class BaseEnemy: MonoBehaviour {
-    [SerializeField] private float speed = 2f;
+    [SerializeField] public float speed = 2f;
     public Transform swanieTransform;
     private bool scoreAdded = false;
     protected virtual void Start() {
@@ -14,8 +14,8 @@ public class BaseEnemy: MonoBehaviour {
         if (transform.position.x < -15) {
             Destroy(gameObject);
         }
-        if (transform.position.x < swanieTransform.position.x && !scoreAdded) {
-            GameManager.Instance.score += 1;
+        if (transform.position.x < (swanieTransform.position.x - 5) && !scoreAdded) {
+            GameManager.Instance.score += 10;
             scoreAdded = true;
         }
     }

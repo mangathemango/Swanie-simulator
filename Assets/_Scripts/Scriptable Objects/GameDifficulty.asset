@@ -12,7 +12,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa9c4d126ba1bf54394c63cd3024c1ac, type: 3}
   m_Name: GameDifficulty
   m_EditorClassIdentifier: 
-  enemySpeedMultiplier: 0
-  numberOfEnemies: 0
-  enemySpawnRate: 0
-  scoresToTriggerDifficulty: 0
+  difficulties:
+  - enemySpeedMultiplier: 1
+    numberOfEnemies: 1
+    enemySpawnRate: 1
+    scoresToTriggerDifficulty: 0
+  - enemySpeedMultiplier: 1.1
+    numberOfEnemies: 1
+    enemySpawnRate: 0.95
+    scoresToTriggerDifficulty: 100
+  - enemySpeedMultiplier: 1.2
+    numberOfEnemies: 2
+    enemySpawnRate: 0.9
+    scoresToTriggerDifficulty: 200
+  - enemySpeedMultiplier: 1.3
+    numberOfEnemies: 2
+    enemySpawnRate: 0.85
+    scoresToTriggerDifficulty: 300
+  - enemySpeedMultiplier: 1.4
+    numberOfEnemies: 30
+    enemySpawnRate: 0.8
+    scoresToTriggerDifficulty: 400
+  - enemySpeedMultiplier: 1.5
+    numberOfEnemies: 35
+    enemySpawnRate: 0.75
+    scoresToTriggerDifficulty: 500
+  - enemySpeedMultiplier: 1.6
+    numberOfEnemies: 40
+    enemySpawnRate: 0.7
+    scoresToTriggerDifficulty: 600
+  - enemySpeedMultiplier: 1.7
+    numberOfEnemies: 45
+    enemySpawnRate: 0.65
+    scoresToTriggerDifficulty: 700
+  - enemySpeedMultiplier: 1.8
+    numberOfEnemies: 50
+    enemySpawnRate: 0.6
+    scoresToTriggerDifficulty: 800
+  - enemySpeedMultiplier: 1.9
+    numberOfEnemies: 55
+    enemySpawnRate: 0.55
+    scoresToTriggerDifficulty: 900

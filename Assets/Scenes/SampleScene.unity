@@ -1077,6 +1077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c505311ed1051646a253fdd5ffa0906, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameDifficulties: {fileID: 11400000, guid: 0f05a465af9fab24abf9a86b220a806f, type: 2}
   enemyContainer: {fileID: 1296496152}
   swanieTransform: {fileID: 546801486}
   enemyPrefabs:
@@ -1085,7 +1086,7 @@ MonoBehaviour:
   - {fileID: 5321621997147620969, guid: 421eb8922e1fec5419fdebc93c71a495, type: 3}
   spawnRate: 0.5
   spawnOffset: 20
-  spawnNumber: 3
+  startDifficulty: 0
 --- !u!1 &930538846
 GameObject:
   m_ObjectHideFlags: 0
