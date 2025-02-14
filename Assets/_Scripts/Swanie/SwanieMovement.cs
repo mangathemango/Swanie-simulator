@@ -62,22 +62,11 @@ class SwanieMovement : MonoBehaviour
     }
 
     public void setAnimation() {
-        if (_jumping) {
-            bodyAnimator.SetBool("Jumping", true);
-            legAnimator.SetBool("Jumping", true);
-            bodyAnimator.SetBool("Running", false);
-            legAnimator.SetBool("Running", false);
-        } else {
-            bodyAnimator.SetBool("Jumping", false);
-            legAnimator.SetBool("Jumping", false);
-            bodyAnimator.SetBool("Running", true);
-            legAnimator.SetBool("Running", true);
-        }
-        if (hasMango) {
-            bodyAnimator.SetBool("HasMango", true);
-        } else {
-            bodyAnimator.SetBool("HasMango", false);
-        }
+        bodyAnimator.SetBool("Jumping", _jumping);
+        legAnimator.SetBool("Jumping", _jumping);
+        bodyAnimator.SetBool("Running", _running);
+        legAnimator.SetBool("Running", _running);
+        bodyAnimator.SetBool("HasMango", hasMango);
     }
 
     private void resetJump() {
