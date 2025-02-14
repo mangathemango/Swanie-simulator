@@ -8,13 +8,6 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {
         get
         {
-            if (applicationIsQuitting)
-            {
-                Debug.LogWarning("[Singleton] Instance '" + typeof(T) +
-                    "' already destroyed on application quit." +
-                    " Won't create again - returning null.");
-                return null;
-            }
 
             lock (_lock)
             {
@@ -44,6 +37,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
                     }
                     else
                     {
+                        DontDestroyOnLoad(_instance.gameObject);
                         Debug.Log("[Singleton] Using instance already created: " +
                             _instance.gameObject.name);
                     }

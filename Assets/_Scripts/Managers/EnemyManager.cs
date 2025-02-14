@@ -50,7 +50,9 @@ public class EnemyManager : Singleton<EnemyManager>
             currentDifficultyIndex = 6;
         }
         yield return new WaitForSeconds(Random.Range(spawnRate, spawnRate * 2));
-        StartCoroutine(SpawnRandomSwan());
+        if (GameManager.Instance.gameStarted) {
+            StartCoroutine(SpawnRandomSwan());
+        }
     }
 
     public GameObject selectRandomSwan() {
