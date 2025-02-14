@@ -30,26 +30,30 @@ MonoBehaviour:
     enemySpawnRate: 0.85
     scoresToTriggerDifficulty: 300
   - enemySpeedMultiplier: 1.4
-    numberOfEnemies: 30
+    numberOfEnemies: 2
     enemySpawnRate: 0.8
     scoresToTriggerDifficulty: 400
   - enemySpeedMultiplier: 1.5
-    numberOfEnemies: 35
+    numberOfEnemies: 4
     enemySpawnRate: 0.75
     scoresToTriggerDifficulty: 500
+  - enemySpeedMultiplier: 1.9
+    numberOfEnemies: 3
+    enemySpawnRate: 1
+    scoresToTriggerDifficulty: 600
   - enemySpeedMultiplier: 1.6
-    numberOfEnemies: 40
+    numberOfEnemies: 3
     enemySpawnRate: 0.7
     scoresToTriggerDifficulty: 600
   - enemySpeedMultiplier: 1.7
-    numberOfEnemies: 45
+    numberOfEnemies: 3
     enemySpawnRate: 0.65
     scoresToTriggerDifficulty: 700
   - enemySpeedMultiplier: 1.8
-    numberOfEnemies: 50
+    numberOfEnemies: 3
     enemySpawnRate: 0.6
     scoresToTriggerDifficulty: 800
   - enemySpeedMultiplier: 1.9
-    numberOfEnemies: 55
+    numberOfEnemies: 3
     enemySpawnRate: 0.55
     scoresToTriggerDifficulty: 900

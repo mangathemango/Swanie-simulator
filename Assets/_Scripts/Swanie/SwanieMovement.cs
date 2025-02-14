@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 class SwanieMovement : MonoBehaviour
@@ -12,7 +13,10 @@ class SwanieMovement : MonoBehaviour
     private bool _jumping = false;
     private bool _running = true;
     private int _currentJumpCount = 0;
-
+    public bool hasMango = false;
+    public Transform shootPoint;
+    public GameObject bulletPrefab;
+    public bool shootReady = true;
     
     private void Start()
     {
@@ -20,6 +24,10 @@ class SwanieMovement : MonoBehaviour
         resetJump();
         _originalX = transform.position.x;
         _rb = GetComponent<Rigidbody2D>();
+
+        if (shootPoint == null) {
+            shootPoint = GameObject.Find("Shoot Point").transform;
+        }
     }
 
     void Update()
@@ -27,6 +35,7 @@ class SwanieMovement : MonoBehaviour
         if (transform.position.x < _originalX) {
             Die();
         }
+        UiManager.Instance.UpdateMangoStatus(hasMango, shootReady);
     }
 
     void Die() {
@@ -52,7 +61,7 @@ class SwanieMovement : MonoBehaviour
         _rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
-    private void setAnimation() {
+    public void setAnimation() {
         if (_jumping) {
             bodyAnimator.SetBool("Jumping", true);
             legAnimator.SetBool("Jumping", true);
@@ -64,11 +73,32 @@ class SwanieMovement : MonoBehaviour
             bodyAnimator.SetBool("Running", true);
             legAnimator.SetBool("Running", true);
         }
+        if (hasMango) {
+            bodyAnimator.SetBool("HasMango", true);
+        } else {
+            bodyAnimator.SetBool("HasMango", false);
+        }
     }
 
     private void resetJump() {
         _currentJumpCount = maxJumpCount;
         _jumping = false;
+        setAnimation();
+    }
+
+    public void Shoot() {
+        if (!shootReady) {
+            return;
+        }
+        shootReady = false;
+        GameObject bullet = Instantiate(bulletPrefab, shootPoint.position, Quaternion.identity);
+        bullet.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 10, ForceMode2D.Impulse);
+        StartCoroutine(resetShoot());
+    }
+
+    private IEnumerator resetShoot() {
+        yield return new WaitForSeconds(3);
+        shootReady = true;
         setAnimation();
     }
 }

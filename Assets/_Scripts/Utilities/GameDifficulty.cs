@@ -5,7 +5,7 @@ public class GameDifficulty: ScriptableObject {
     [System.Serializable]
     public struct Difficulty {
         public float enemySpeedMultiplier;
-        [Range(1,3)]
+        [Range(1,4)]
         public int numberOfEnemies;
         public float enemySpawnRate;
         public int scoresToTriggerDifficulty;

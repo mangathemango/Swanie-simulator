@@ -11,6 +11,7 @@ public class EnemyManager : Singleton<EnemyManager>
     public float spawnOffset = 30f;
     public int startDifficulty = 0;
 
+    private SwanieMovement swanieMovement;
     private GameDifficulty.Difficulty[] difficulties;
     private GameDifficulty.Difficulty currentDifficulty;
     private int currentDifficultyIndex = 0;
@@ -18,11 +19,11 @@ public class EnemyManager : Singleton<EnemyManager>
         if (!swanieTransform) {
             swanieTransform = GameObject.Find("Swanie").transform;
         }
+        swanieMovement = GameObject.Find("Swanie").GetComponent<SwanieMovement>();
         difficulties = gameDifficulties.difficulties;
         currentDifficulty = difficulties[startDifficulty];
         currentDifficultyIndex = startDifficulty;
-        StartCoroutine(SpawnRandomSwan());
-        Debug.Log(currentDifficultyIndex);
+
     }
 
     private void Update() {
@@ -43,11 +44,19 @@ public class EnemyManager : Singleton<EnemyManager>
         normalSwan.GetComponent<BaseEnemy>().speed *= currentDifficulty.enemySpeedMultiplier;
 
         spawnRate = currentDifficulty.enemySpawnRate;
+        if (normalSwan.GetComponent<Mango>()) {
+            yield return new WaitUntil(() => swanieMovement.hasMango);
+            currentDifficulty = difficulties[6];
+            currentDifficultyIndex = 6;
+        }
         yield return new WaitForSeconds(Random.Range(spawnRate, spawnRate * 2));
         StartCoroutine(SpawnRandomSwan());
     }
 
     public GameObject selectRandomSwan() {
+        if (currentDifficulty.numberOfEnemies == 4) {
+            return enemyPrefabs[3];
+        }
         int result = Random.Range(0, currentDifficulty.numberOfEnemies > enemyPrefabs.Length ? enemyPrefabs.Length : currentDifficulty.numberOfEnemies);
         return enemyPrefabs[result];
     }
