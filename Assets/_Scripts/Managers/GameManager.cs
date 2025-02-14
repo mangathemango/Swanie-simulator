@@ -11,5 +11,6 @@ public class GameManager: Singleton<GameManager> {
     public void StartGame() {
         score = 0;
         StartCoroutine(EnemyManager.Instance.SpawnRandomSwan());
+        UiManager.Instance.SetGameUI();
     }
 }

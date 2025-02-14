@@ -21,6 +21,10 @@ public class UiManager: Singleton<UiManager> {
         gameUI.enabled = false;
         mainMenu.enabled = true;
     }
+    public void SetGameUI() {
+        gameUI.enabled = true;
+        mainMenu.enabled = false;
+    }
     private void Start() {
         UpdateScore(0);
         UpdateMangoStatus(false, false);
